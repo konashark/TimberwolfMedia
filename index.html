@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./css/style.css">
+        <title>Timberwolf Media</title>
+    </head>
+    <body>
+    <div id="background">
+        <div id="backgroundContent" class="centerUi">
+        </div>
+    </div>
+
+    <div id="screen">
+            <div id="ui" class="centerUi">
+
+                <div id="header">Timberwolf Media</div>
+                <div id="options">The Art and Science of the Ranch</div>
+                <div id="optionContainer"></div>
+            </div>
+        </div>
+
+    <script src="libs/jquery-2.1.3.min.js"></script>
+    <script>
+        // To any recruiters who may be looking at this code to see how I write code... this is totally NOT how I
+        // would normally do it. JavaScript belongs in javascript files, not in index.html. This was just an experiment
+        // to see if I could make a multi-tiered, fully-navigable menuing system in just a little bit of code.
+        var menus = {
+            home:
+            "<a class='menuCell scriptFont' href='./gallery_wms/index.html'>" +
+            "   <div>Art of Wendy</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/art.jpg)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell scriptFont' href='./gallery_jrs/index.html'>" +
+            "   <div>Jeff's Photography</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/photo.jpg)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell scriptFont' menu='writing'>" +
+            "   <div>Books & Writing</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/books.jpeg)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' menu='games'>" +
+            "   <div>HTML Games</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/ris.jpg)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' menu='demos'>" +
+            "   <div>HTML Apps</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/html5.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' menu='javascript'>" +
+            "   <div>JavaScript Rockstar</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/jsrockstar.jpeg)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell boldFont' href='http://www.hometourphoto.com'>" +
+            "   <div>HomeTour Photo</div>" +
+            "   <div class='menuCellImg' style='background-color: white; background-image: url(resources/htp-480.png)'></div>" +
+            "</a>"
+            ,
+            games:
+            "<a class='menuCell thinFont' href='./Javascript-Rockstar/AlienInvasion/game/index.html'>" +
+            "   <div>Alien Invasion!</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/invasion.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' href='./Javascript-Rockstar/RocksInSpace/game/index.html'>" +
+            "   <div>Rocks In Space</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/ristitle.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' menu='home'> " +
+            "   <div>Top Menu</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/toppage2.png)'></div>" +
+            "</a>"
+            ,
+            demos:
+            "<a class='menuCell thinFont' href='./apps/chaosGame/index.html'>" +
+            "   <div>Chaos Lab</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/chaos.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' href='./apps/Timeline/index.html'>" +
+            "   <div>Timeline Demo</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/timeline.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' menu='home'>" +
+            "   <div>Top Menu</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/toppage2.png)'></div>" +
+            "</a>"
+            ,
+            javascript:
+            "<a class='menuCell thinFont' href='./Javascript-Rockstar/BasicAnimation/tutorial/index.html'>" +
+            "   <div>Tutorial - Animation</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/code.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' href='./Javascript-Rockstar/AlienInvasion/tutorial/index.html'>" +
+            "   <div>Tutorial - Alien Invasion!</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/code.png)'></div>" +
+            "</a>" +
+
+//            "<div class='banner'><a href='./Javascript-Rockstar/RocksInSpace/tutorial/index.html'>Tutorial - Rocks In Space</a></div><p>" +
+//            "<div class='banner'><a>Soon! - Alien Invasion!</a></div><p>" +
+
+            "<a class='menuCell thinFont'>" +
+            "   <div>Soon! - Rocks In Space</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/code.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell thinFont' menu='home'> " +
+            "   <div>Top Menu</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/toppage2.png)'></div>" +
+            "</a>"
+            ,
+            writing:
+            "<a class='menuCell scriptFont' href='https://www.amazon.com/gp/product/1533203016/ref=ox_sc_sfl_title_39?ie=UTF8&psc=1'>" +
+            "   <div>Thunder</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/thunder.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell scriptFont' href='https://www.amazon.com/gp/product/1496028503/ref=ox_sc_sfl_title_44?ie=UTF8&psc=1'>" +
+            "   <div>Slow Children at Play</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/scap.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell scriptFont' href='https://www.amazon.com/gp/product/1533203016/ref=ox_sc_sfl_title_39?ie=UTF8&psc=1'>" +
+            "   <div>The Book of Sprague</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/bos.png)'></div>" +
+            "</a>" +
+
+            "<a class='menuCell scriptFont' menu='home'> " +
+            "   <div>Top Menu</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/toppage2.png)'></div>" +
+            "</a>"
+        };
+
+        var drawMenu = function(menu) {
+            $('#optionContainer').html('<div id="menuName"></div><br>' + menus[menu] );
+            $('#menuName').text(menu);
+            setTimeout(function() { $('#menuName').css({ 'transform': 'scale(1,1)', 'opacity': 1 })}, 1);
+
+            persistentWrite('lastMenu', menu);
+        };
+
+        $('#ui').on('click', '.menuCell', function(elem) {
+            var newMenu = this.getAttribute('menu');
+            if (newMenu) {
+                console.log('Clicked on ', newMenu);
+                drawMenu(newMenu);
+            }
+        });
+
+        $('#header').on('click', function(elem) {
+            drawMenu('home');
+        });
+
+        var persistentWrite = function(name, value) {
+            if(typeof(localStorage) == "object") {
+                localStorage.setItem(name, JSON.stringify(value));
+            }
+        };
+
+        var persistentRead = function(name) {
+            if(typeof(localStorage) == "object") {
+                var value = localStorage.getItem(name);
+                if (value !== "undefined") {
+                    value = JSON.parse(value);
+                }
+                return value;
+            }
+        };
+
+        var lastMenu = persistentRead('lastMenu');
+        if (lastMenu && menus[lastMenu]) {
+            drawMenu(lastMenu);
+        } else {
+            drawMenu('home');
+        }
+
+    </script>
+    </body>
+</html>

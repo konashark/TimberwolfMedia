@@ -1,0 +1,1 @@
+document.onload = PORTFOLIO_VIEW.draw;

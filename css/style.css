@@ -1,0 +1,185 @@
+@font-face {
+    font-family: Heading;
+    src: url('../resources/AftonJames.ttf');
+}
+
+@font-face {
+    font-family: Thin;
+    src: url('../resources/OpenSansLight.ttf');
+}
+
+@font-face {
+    font-family: Script;
+    src: url('../resources/Aguafina.ttf');
+}
+
+@font-face {
+    font-family: Bold;
+    src: url('../resources/Passion.ttf');
+}
+
+.centerUi {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: 100%;
+    overflow:hidden;
+}
+
+#background {
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+}
+
+#backgroundContent {
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-image: url("../resources/timberwolf_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#screen {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 200%;
+    cursor: pointer;
+}
+
+#ui {
+    //position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 960px;
+    font-family: Thin;
+}
+
+#title {
+    color: #fff;
+    font-size: 6rem;
+    text-shadow: #000 3px 2px;
+    position: absolute;
+    top: 3%;
+    width: 100%;
+    text-align: center;
+}
+
+#intro {
+    color: #a22;
+    font-size: 5rem;
+    text-shadow: #fff 3px 2px;
+    position: absolute;
+    top: 70%;
+    width: 100%;
+    text-align: center;
+}
+
+#header {
+    font-family: Heading;
+    font-size: 64pt;
+    //color: #88CCFF;
+    color: #220000;
+    text-align: center;
+    opacity: 1.0;
+    text-shadow: #eee 4px 4px 4px;
+    font-smoothing: antialiased;
+    letter-spacing: 3px;
+    margin-top: 12px;
+}
+
+#options {
+    font-size: 25pt;
+    color: #fc3;
+    text-align: center;
+    font-family: Script;
+    text-shadow: black 2px 2px 1px;
+    font-smoothing: antialiased;
+    letter-spacing: 2px;
+}
+
+.menuCell {
+    display: inline-block;
+    margin: 8px;
+    padding-top: 15px;
+    width: 300px;
+    height: 270px;
+    border: solid 1px #027;
+    border-radius: 13px;
+    transition: all 256ms;
+    text-align: center;
+    background: rgb(109,179,242); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(109,179,242,.66) 0%, rgba(84,163,238,.66) 7%, rgba(54,144,240,.66) 13%, rgba(30,105,222,.66) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(109,179,242,.66) 0%,rgba(84,163,238,.66) 7%,rgba(54,144,240,.66) 13%,rgba(30,105,222,.66) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(109,179,242,.66) 0%,rgba(84,163,238,.66) 7%,rgba(54,144,240,.66) 13%,rgba(30,105,222,.66) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+}
+
+.menuCell:hover {
+    background: rgb(109,179,242); /* Old browsers */
+    background: -moz-linear-gradient(top, rgba(109,179,242,1) 0%, rgba(84,163,238,1) 7%, rgba(54,144,240,1) 13%, rgba(30,105,222,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(109,179,242,1) 0%,rgba(84,163,238,1) 7%,rgba(54,144,240,1) 13%,rgba(30,105,222,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(109,179,242,1) 0%,rgba(84,163,238,1) 7%,rgba(54,144,240,1) 13%,rgba(30,105,222,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+a {
+//    font-family: Thin;
+//    font-size: 20pt;
+    text-decoration: none;
+    color: white;
+    text-shadow: black 1px 1px 1px;
+    font-smoothing: antialiased;
+}
+
+.menuCell:hover a {
+    color: #fc3 !important;
+}
+
+.menuCellImg {
+    margin: 15px 15px 15px 15px;
+    width: 270px;
+    height: 190px;
+    background-size: cover;
+}
+
+#menuName {
+    color: white;
+    opacity: 0;
+    text-align: center;
+    transition: ease-in-out, transform 999ms, opacity 999ms;
+    transform: scale(.25,.25);
+    z-index: 0;
+    font-size: 40px;
+}
+
+.scriptFont {
+    font-family: Script;
+    font-size: 24pt;
+}
+
+.thinFont {
+    font-family: Thin;
+    font-size: 20pt;
+}
+
+.headingFont {
+    font-family: Heading;
+}
+
+.boldFont {
+    font-family: Bold;
+    font-size: 24pt;
+}
