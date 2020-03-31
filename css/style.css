@@ -183,3 +183,8 @@ a {
     font-family: Bold;
     font-size: 24pt;
 }
+
+#footerContainer {
+    text-align: center;
+    margin-top: 50px;
+}

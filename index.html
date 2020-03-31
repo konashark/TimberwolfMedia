@@ -16,6 +16,9 @@
                 <div id="header">Timberwolf Media</div>
                 <div id="options">The Art and Science of the Ranch</div>
                 <div id="optionContainer"></div>
+                <div id="footerContainer">
+                    <a href="mailto:timberwolfemail@gmail.com?Subject=Inquiry"><span class="col-xs-10 contactText">Contact Us</span></a>
+                </div>
             </div>
         </div>
 
@@ -26,19 +29,19 @@
         // to see if I could make a multi-tiered, fully-navigable menuing system in just a little bit of code.
         var menus = {
             home:
+            "<a class='menuCell scriptFont' menu='writing'>" +
+            "   <div>Books & Writing</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/books.jpeg)'></div>" +
+            "</a>" +
+
             "<a class='menuCell scriptFont' href='./gallery_wms/index.html'>" +
-            "   <div>Art of Wendy</div>" +
+            "   <div>Art by Wendy</div>" +
             "   <div class='menuCellImg' style='background-image: url(resources/art.jpg)'></div>" +
             "</a>" +
 
             "<a class='menuCell scriptFont' href='./gallery_jrs/index.html'>" +
             "   <div>Jeff's Photography</div>" +
             "   <div class='menuCellImg' style='background-image: url(resources/photo.jpg)'></div>" +
-            "</a>" +
-
-            "<a class='menuCell scriptFont' menu='writing'>" +
-            "   <div>Books & Writing</div>" +
-            "   <div class='menuCellImg' style='background-image: url(resources/books.jpeg)'></div>" +
             "</a>" +
 
             "<a class='menuCell thinFont' menu='games'>" +
@@ -118,6 +121,11 @@
             "</a>"
             ,
             writing:
+            "<a class='menuCell scriptFont' href='https://www.amazon.com/gp/product/1096827158/ref=ox_sc_saved_title_7?smid=ATVPDKIKX0DER&psc=1'>" +
+            "   <div>The Errand of Angels</div>" +
+            "   <div class='menuCellImg' style='background-image: url(resources/lostbook.png)'></div>" +
+            "</a>" +
+
             "<a class='menuCell scriptFont' href='https://www.amazon.com/gp/product/1533203016/ref=ox_sc_sfl_title_39?ie=UTF8&psc=1'>" +
             "   <div>Thunder</div>" +
             "   <div class='menuCellImg' style='background-image: url(resources/thunder.png)'></div>" +
